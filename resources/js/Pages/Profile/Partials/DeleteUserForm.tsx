@@ -108,12 +108,12 @@ export default function DeleteUserForm({
                         />
                     </div>
 
-                    <div className="mt-6 flex justify-end">
+                    <div className="mt-6 flex justify-end space-x-4">
                         <SecondaryButton onClick={closeModal}>
                             Cancel
                         </SecondaryButton>
 
-                        <DangerButton className="ms-3" disabled={processing}>
+                        <DangerButton disabled={processing} >
                             Delete Account
                         </DangerButton>
                     </div>
