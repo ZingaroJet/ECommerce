@@ -13,13 +13,16 @@ class ProductImages extends EditRecord
 {
     protected static string $resource = ProductResource::class;
 
+    protected static ?string $title = 'Product Images';
+
     protected static ?string $navigationIcon = 'elemplus-picture-rounded';
 
     public function form (Form $form): Form{
-        
+
         return $form
         ->schema([
             SpatieMediaLibraryFileUpload::make('images')
+            ->label(false)
             ->image()
             ->multiple()
             ->openable()

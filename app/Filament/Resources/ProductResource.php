@@ -21,6 +21,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ProductResource\Pages\ProductImages;
+use App\Filament\Resources\ProductResource\Pages\ProductVariationTypes;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Pages\Actions;
@@ -164,6 +165,7 @@ class ProductResource extends Resource
             'create' => Pages\CreateProduct::route('/create'),
             'edit' => Pages\EditProduct::route('/{record}/edit'),
             'images' => Pages\ProductImages::route('/{record}/images'),
+            'variation-types' => Pages\ProductVariationTypes::route('/{record}/variation-types'),
         ];
     }
 
@@ -171,7 +173,8 @@ class ProductResource extends Resource
     {
         return $page->generateNavigationItems([
             EditProduct::class,
-            ProductImages::class
+            ProductImages::class,
+            ProductVariationTypes::class
         ]);
     }
 }
